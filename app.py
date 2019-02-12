@@ -35,6 +35,8 @@ dv_paper.parse_categories()
 dv_paper.set_feeds()
 dv_paper.download_feeds()
 dv_paper.generate_articles()
+for category in dv_paper.category_urls():
+    print(category)
 print(dv_paper.size())
 
 
