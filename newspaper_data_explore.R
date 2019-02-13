@@ -4,8 +4,8 @@ data <- read.csv('data.csv', stringsAsFactors = F)
 library(dplyr)
 
 data %>% 
-  dplyr::distinct(date) %>% 
-  # dplyr::mutate(cat = gsub(".*, |\\..*", "", name)) %>% 
+  dplyr::distinct(date, .keep_all = T) %>% 
+  filter(!grepl(pattern = "cookies",x = text)) %>% 
   View()
 
 duplicated()
