@@ -40,11 +40,7 @@ for category in dv_paper.category_urls():
 print(dv_paper.size())
 
 
-url = 'https://www.diariovasco.com/costa-urola/zarautz/zarautz-bildu-dispuesto-respaldar-20190212002922-ntvo.html'
-a = newspaper.Article(url);
-a.download()
-a.parse()
-a.text
+
 
 if(False):
     from flask import Flask
