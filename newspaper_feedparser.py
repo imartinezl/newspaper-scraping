@@ -30,5 +30,9 @@ def base():
 def index():
     return render_template('index.html', title='DV', entries=d.entries)
 
+@app.route('/index/<t>')
+def index_title(t):
+    return render_template('item.html', title='DV', t=t)
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
