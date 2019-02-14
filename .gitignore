@@ -2,3 +2,5 @@
 .ipynb_checkpoints/*
 __pychache__/*
 venv/*
+.Rhistory
+*.json
