@@ -1,6 +1,6 @@
 .DS_store
 .ipynb_checkpoints/*
-__pychache__/*
+__pycache__/*
 venv/*
 .Rhistory
 *.json
