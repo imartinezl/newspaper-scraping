@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hello</h1>
-    {% for e in entries %}
+    <h1>DIARIO VASCO MIERDER</h1>
+
+    {% for entry in entries %}
     <div>
-    	<a href={{ url_for('index', t = e.title) }}>Home</a>
-    	<p>{{ e.title }} says: <b>{{ e.published }}</b></p>
+    	<a href="{{ url_for('article', entry_index = entry.index) }}">
+    		<b>[{{ entry.index + 1 }}]: {{ entry.title }}</b>
+    	</a>
+    	<p>{{ entry.summary }}</p>
+
     </div>
     {% endfor %}
 {% endblock %}
