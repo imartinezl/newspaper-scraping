@@ -55,19 +55,25 @@ def article(rss_id, entry_index):
         rss_id = int(rss_id)
         i = int(entry_index)
     except:
-        return
+        return 0
 
     entries = flask.session.get("entries")
+
+    # Issue with some rss links
+    url = entries[i].link
+    if url.count('http') > 1 :
+        entries[i].link = url[url.rfind('http'):]
+
     if not entries[i].downloaded:
         article = newspaper.Article(entries[i].link)
-        print('***DOWNLOADING***', article.url)
+        print('***DOWNLOADING***', entries[i].link)
         try:
         	article.download()
         	article.parse()
         except:
-        	print('***FAILED TO DOWNLOAD***', article.url)
+        	print('***FAILED TO DOWNLOAD***', entries[i].link)
         	# del rss_data[rss_id].entries[i]
-        	return
+        	return 0
         entries[i].top_image = article.top_image
         entries[i].html = article.html
         entries[i].text = article.text
