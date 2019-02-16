@@ -40,8 +40,10 @@ def base():
 
 @app.route('/<rss_id>')
 def index(rss_id):
-    print(rss_id)
-    rss_id = int(rss_id)
+    try:
+        rss_id = int(rss_id)
+    except:
+        return
     entries = rssEntries(rss_array[rss_id]['url'])
     flask.session["entries"] = entries;
     return flask.render_template('index.html', rss_array=rss_array, rss_id = rss_id, entries=entries)
@@ -49,8 +51,8 @@ def index(rss_id):
 
 @app.route('/<rss_id>/<entry_index>')
 def article(rss_id, entry_index):
-    rss_id = int(rss_id)
     try:
+        rss_id = int(rss_id)
         i = int(entry_index)
     except:
         return
