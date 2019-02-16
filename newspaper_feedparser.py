@@ -1,51 +1,80 @@
 # -*- coding: utf-8 -*-
 import feedparser
-d = feedparser.parse('https://www.diariovasco.com/rss/2.0/portada')
-
 import html
-
 import newspaper
-for i in range(len(d.entries)):
-	d.entries[i].title =  html.unescape(d.entries[i].title)
-	d.entries[i].summary =  html.unescape(d.entries[i].summary)
-	d.entries[i]['downloaded'] = False
-	d.entries[i]['index'] = i
+import json
+import flask
+from flask_session import Session
+
+def rssEntries(rss_url):
+	d = feedparser.parse(rss_url);
+
+	for i in range(len(d.entries)):
+		d.entries[i].title =  html.unescape(d.entries[i].title);
+		d.entries[i].summary =  html.unescape(d.entries[i].summary);
+		d.entries[i]['downloaded'] = False;
+		d.entries[i]['index'] = i;
+	return d.entries
+
+# def getAllRss(rss_array):
+#     rss_data = [];
+#     print('***GETTING ALL ENTRIES***')
+#     for rss in rss_array:
+#         rss_data.append(rssEntries(rss['url']))
+#     return rss_data
+ 
+with open('rss_data.json') as rss_file:
+    rss_array = json.load(rss_file)
+# rss_data = getAllRss(rss_array);
 
 
-from flask import Flask
-from flask import render_template
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
+SESSION_TYPE = 'filesystem'
+app.config.from_object(__name__)
+Session(app)
 
 @app.route('/')
 def base():
-    return render_template('base.html', title='DV')
+    return flask.render_template('base.html', rss_array=rss_array)
 
-@app.route('/index')
-def index():
-    return render_template('index.html', title='DV', entries=d.entries)
+@app.route('/<rss_id>')
+def index(rss_id):
+    print(rss_id)
+    rss_id = int(rss_id)
+    entries = rssEntries(rss_array[rss_id]['url'])
+    flask.session["entries"] = entries;
+    return flask.render_template('index.html', rss_array=rss_array, rss_id = rss_id, entries=entries)
 
-@app.route('/index/<entry_index>')
-def article(entry_index):
-	j = int(entry_index)
-	entry = d.entries[j]
 
-	if not d.entries[j].downloaded:
-		article = newspaper.Article(d.entries[j].link)
-		print('***DOWNLOADING***', article.url)
-		try:
-			article.download()
-			article.parse()
-		except:
-			print('***FAILED TO DOWNLOAD***', article.url)
-			# del d.entries[j]
-			return 0
-		d.entries[j].top_image = article.top_image
-		d.entries[j].text = article.text
-		print(article.text)
-		d.entries[j]['downloaded'] = True
-	return render_template('article.html', title='DV', entry=d.entries[j])
+@app.route('/<rss_id>/<entry_index>')
+def article(rss_id, entry_index):
+    rss_id = int(rss_id)
+    try:
+        i = int(entry_index)
+    except:
+        return
 
+    entries = flask.session.get("entries")
+    if not entries[i].downloaded:
+        article = newspaper.Article(entries[i].link)
+        print('***DOWNLOADING***', article.url)
+        try:
+        	article.download()
+        	article.parse()
+        except:
+        	print('***FAILED TO DOWNLOAD***', article.url)
+        	# del rss_data[rss_id].entries[i]
+        	return
+        entries[i].top_image = article.top_image
+        entries[i].html = article.html
+        entries[i].text = article.text
+        entries[i]['downloaded'] = True
+    else:
+        print('***ALREADY DOWNLOADED***', entries[i].link)
+    flask.session["entries"] = entries;
+
+    return flask.render_template('article.html', rss_array=rss_array, entry=entries[i])
 
 
 if __name__ == '__main__':
