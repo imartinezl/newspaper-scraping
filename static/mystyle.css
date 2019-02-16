@@ -1,0 +1,20 @@
+@font-face{
+	font-family: felipa;
+	src: url('Felipa-Regular.ttf');
+}
+
+body {
+	font-family: georgia; 
+	color: black
+}
+h1 {
+	font-family: felipa; 
+	color: pink
+}
+
+#main_image {
+	width: 200;
+}
+#main_image_container {
+	text-align: center;
+}
