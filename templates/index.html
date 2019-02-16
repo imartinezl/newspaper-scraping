@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>DIARIO VASCO MIERDER</h1>
-
     {% for entry in entries %}
     <div>
-    	<a href="{{ url_for('article', entry_index = entry.index) }}">
+    	{% if entry.imagen %}
+    	<img src={{ entry.imagen }} width="100" > 
+    	{% endif %}
+    	<a href="{{ url_for('article', rss_id = rss_id, entry_index = entry.index) }}">
     		<b>[{{ entry.index + 1 }}]: {{ entry.title }}</b>
     	</a>
     	<p>{{ entry.summary }}</p>
-
     </div>
     {% endfor %}
 {% endblock %}
