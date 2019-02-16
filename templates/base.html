@@ -1,14 +1,18 @@
 <html>
     <head>
-      <title>DV</title>
+      <title>DiarioVasco</title>
       <link rel="shortcut icon" href="/static/favicon.png">
       <link rel="icon" type="image/png" href="/static/favicon-192x192.png" sizes="192x192">
       <link rel="apple-touch-icon" sizes="192x192" href="/static/favicon-192x192.png">
+
+      <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='mystyle.css')}}"/> 
     </head>
     <body>
-        <a href="{{ url_for('base') }}">
-        <div>DIARIO VASCO MIERDER</div>
-        </a>
+        <div id=main_image_container
+          <a href="{{ url_for('base') }}">
+            <img id=main_image src='static/dv.png' > 
+          </a>
+        </div>
         <hr>
         {% for rss in rss_array %}
           <div>
