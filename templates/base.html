@@ -1,14 +1,22 @@
 <html>
     <head>
-      {% if title %}
-      <title>{{ title }}</title>
-      {% else %}
-      <title>Welcome to Microblog</title>
-      {% endif %}
+      <title>DV</title>
     </head>
     <body>
-        <div>DV: <a href="/index">Home</a></div>
+        <a href="{{ url_for('base') }}">
+        <div>DIARIO VASCO MIERDER</div>
+        </a>
         <hr>
-        {% block content %}{% endblock %}
+        {% for rss in rss_array %}
+          <div>
+            <a href="{{ url_for('index', rss_id = loop.index-1) }}">
+              <b>{{rss.title}}</b>
+            </a>
+          </div>
+        {% endfor %}
+
+        {% block content %}
+
+        {% endblock %}
     </body>
 </html>
