@@ -1,20 +1,81 @@
-@font-face{
-	font-family: felipa;
-	src: url('Felipa-Regular.ttf');
-}
 
 body {
-	font-family: georgia; 
-	color: black
+	font-family: SourceSerifPro-Regular;
+	font-size: 12;
 }
-h1 {
-	font-family: felipa; 
-	color: pink
+hr {
+	height: 1px; 
+	border: none; 
+	color: #000; 
+	background-color: #000;
 }
 
-#main_image {
-	width: 200;
-}
 #main_image_container {
 	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+#main_image {
+	width: 400;
+}
+.section-link {
+	display:inline-block;
+	/*width: 120px;*/
+    /*height: 40px;*/
+	padding-top: 0px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+}
+.section-text {
+	color: black;
+	font-family: Roboto-Medium;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: center;
+    margin: 0px;
+
+}
+
+#entries-container {
+	display: grid;
+	grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.entry-container {
+	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+	grid-column: span 1;
+	border-top: 1px solid black;
+	display: inline-grid;
+}
+.entry-img {
+	width: 100%;
+}
+.entry-link {
+    color: black;
+    text-decoration: none;
+    vertical-align: top;
+    padding-top: 10px;
+}
+.entry-link:hover {
+    text-decoration: underline;
+}
+.entry-title {
+	color: black;
+	font-family: Roboto-Bold;
+	font-size: 18px;
+	text-align: left;
+	margin: 0px;
+}
+.entry-summary {
+	font-family: SourceSerifPro-Regular;
+	font-size: 14;
+}
+
+
+#entry-title{
+	font-family: SourceSerifPro-Bold;
+	font-size: 26px;
+	color: black
 }
