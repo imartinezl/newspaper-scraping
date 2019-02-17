@@ -8,20 +8,18 @@
       <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='mystyle.css')}}"/> 
     </head>
     <body>
-        <div id=main_image_container
+        <div id=main_image_container>
           <a href="{{ url_for('base') }}">
-            <img id=main_image src='static/dv.png' > 
+            <img id=main_image src='../static/dv.png' > 
           </a>
         </div>
         <hr>
         {% for rss in rss_array %}
-          <div>
-            <a href="{{ url_for('index', rss_id = loop.index-1) }}">
-              <b>{{rss.title}}</b>
-            </a>
-          </div>
+          <a class="section-link" href="{{ url_for('index', rss_id = loop.index-1) }}">
+            <p class="section-text">{{rss.title}}</p>
+          </a>
         {% endfor %}
-
+        <hr>
         {% block content %}
 
         {% endblock %}
