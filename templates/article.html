@@ -1,8 +1,8 @@
-{% extends "index.html" %}
+{% extends "section.html" %}
 
 {% block content %}
     <div>
-    	<p><b>{{ entry.title }}</b></p>
+    	<p id=entry-title>{{ entry.title }}</p>
     	<img src={{ entry.top_image }} > 
     	<p>{{ entry.summary }}</p>
     	<p>{% autoescape false %}{{ entry.text.replace('\n', '<br>') }}{% endautoescape %}</p>
