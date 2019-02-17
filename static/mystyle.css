@@ -22,25 +22,32 @@ hr {
 	display:inline-block;
 	/*width: 120px;*/
     /*height: 40px;*/
-	padding-top: 0px;
-	padding-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
 	text-decoration: none;
+	background-color: transparent;
+	color: #000;
 }
+.section-link:hover {
+	background-color: #2b2e36;
+	color: #FFF;
+}
+
 .section-text {
-	color: black;
+	color: #000;
 	font-family: Roboto-Medium;
 	font-size: 16px;
 	text-align: center;
 	vertical-align: center;
     margin: 0px;
-
+    color: inherit;
 }
 
 #entries-container {
 	display: grid;
-	grid-gap: 10px;
+	grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .entry-container {
@@ -51,6 +58,7 @@ hr {
 }
 .entry-img {
 	width: 100%;
+	margin-top: 5px;
 }
 .entry-link {
     color: black;
@@ -74,8 +82,30 @@ hr {
 }
 
 
-#entry-title{
+
+
+.article-container {
+	margin-left: 35;
+	margin-right: 35;
+	width: 600px;
+}
+.article-title {
+	color: black;
 	font-family: SourceSerifPro-Bold;
-	font-size: 26px;
-	color: black
+	font-size: 28px;
+	margin: 0;
+	padding-top: 20;
+}
+.article-img {
+	width: 100%;
+}
+.article-summary {
+	font-family: SourceSerifPro-SemiBold;
+	font-size: 20px;
+}
+.article-text {
+	color: black;
+	font-family: SourceSerifPro-Regular;
+	font-size: 16px;
+	text-align: justify;
 }
