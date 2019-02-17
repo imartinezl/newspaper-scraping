@@ -39,14 +39,14 @@ def base():
     return flask.render_template('base.html', rss_array=rss_array)
 
 @app.route('/<rss_id>')
-def index(rss_id):
+def section(rss_id):
     try:
         rss_id = int(rss_id)
     except:
         return
     entries = rssEntries(rss_array[rss_id]['url'])
     flask.session["entries"] = entries;
-    return flask.render_template('index.html', rss_array=rss_array, rss_id = rss_id, entries=entries)
+    return flask.render_template('section.html', rss_array=rss_array, rss_id = rss_id, entries=entries)
 
 
 @app.route('/<rss_id>/<entry_index>')
