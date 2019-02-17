@@ -48,7 +48,10 @@ hr {
 #entries-container {
 	display: grid;
 	grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+    list-style: none;
+    max-width: 1000px;
 }
 .entry-container {
 	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
