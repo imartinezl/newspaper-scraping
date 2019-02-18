@@ -2,12 +2,18 @@
 body {
 	font-family: SourceSerifPro-Regular;
 	font-size: 12;
+	margin: 0px auto;
+    text-align: center;
+	max-width: 1080px;
+	background-color: #ffffff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
 }
 hr {
-	height: 1px; 
+	height: 2.5px; 
 	border: none; 
-	color: #000; 
-	background-color: #000;
+	color: #67686b; 
+	background-color: #67686b;
 }
 
 #main_image_container {
@@ -16,10 +22,12 @@ hr {
 	padding-bottom: 5px;
 }
 #main_image {
-	width: 400;
+	max-width: 90%;
+	width: 400px;
 }
 .section-link {
 	display:inline-block;
+	text-align: center;
 	/*width: 120px;*/
     /*height: 40px;*/
 	padding-top: 5px;
@@ -29,6 +37,8 @@ hr {
 	text-decoration: none;
 	background-color: transparent;
 	color: #000;
+	justify-content: center;
+	align-items: center;
 }
 .section-link:hover {
 	background-color: #2b2e36;
@@ -48,9 +58,14 @@ hr {
 #entries-container {
 	display: flex;
   	flex-wrap: wrap;
+  	padding-left: 10px;
+	padding-right:10px;
+
+	
+
 }
 .entry-container {
-	width: 300px;
+	width: 300;
 	padding-left: 10px;
 	padding-right: 10px;
 	float: left;
@@ -63,22 +78,26 @@ hr {
 	    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	    grid-auto-flow: dense;
 	    list-style: none;
-	    max-width: 1000px;
+	    margin: 0px auto;
+    	text-align: center;
+	    
 	}
 	.entry-container {
-		/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 		grid-column: span 1;
-		border-top: 1px solid black;
+		border-top: 1px ridge black;
 		display: inline-grid;
 		width: 100%;
 		padding-left: 0px;
-		padding-right: 0px;
+		padding-right:0px;
 	}
 }
 
 .entry-img {
 	width: 100%;
 	margin-top: 5px;
+	opacity: 0.95;
+  	filter: alpha(opacity=95);
+
 }
 .entry-link {
     color: black;
@@ -95,19 +114,25 @@ hr {
 	text-align: left;
 	margin: 0px;
     padding-top: 10px;
+    padding-bottom: 0px;
 }
 .entry-summary {
 	font-family: SourceSerifPro-Regular;
 	font-size: 14;
+	text-align: left;
+	padding-top: 10px;
+    padding-bottom: 0px;
+	margin: 0px;
 }
 
 
 
 
 .article-container {
-	margin-left: 35;
-	margin-right: 35;
 	width: 600px;
+	max-width: 90%;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .article-title {
 	color: black;
