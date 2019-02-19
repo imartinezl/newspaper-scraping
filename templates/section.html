@@ -6,8 +6,9 @@
 	    <div class="entry-container">
 	    	<a class="entry-link" href="{{ url_for('article', rss_id = rss_id, entry_index = entry.index) }}">
 	    	{% if entry.imagen %}
-	    	<img class="entry-img" src={{ entry.imagen }} width="100" >
-	    	<!-- Your lucky number is: {{ range(1, 51) | random }} -->
+	    	<div class=entry-img-container>
+	    		<img class="entry-img" src={{ entry.imagen }} width="100" >
+	    	</div>
 	    	{% endif %}
 	    		<p class="entry-title">{{ entry.title }}</p>
 	    	</a>
