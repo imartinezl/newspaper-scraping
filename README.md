@@ -27,7 +27,7 @@ The final webpage looks like this (very basic design, but functional):
 
 ### In detail
 
-RSS from the newspaper is used as the source of information. The sections of interest are indicated in the json file *rss_data.json*:
+[RSS](https://www.diariovasco.com/rss/) from the newspaper is used as the source of information. The sections of interest are indicated in the json file *rss_data.json*:
 ```json
 [
 	{"url": "https://www.diariovasco.com/rss/2.0/?section=ultima-hora", "title":"Ultima Hora"},
@@ -38,14 +38,14 @@ RSS from the newspaper is used as the source of information. The sections of int
 
 After importing this data, I set up the Flask server with the following html templates:
 
-- *base.html* : shows the title of the newspaper and the available sections
-- *section.html* : recent articles indexed on that section
-- *article.html* : title, subtitle, main image and text of an article 
+- **base.html** : shows the title of the newspaper and the available sections
+- **section.html** : recent articles indexed on that section
+- **article.html** : title, subtitle, main image and text of an article 
 
 When an article is requested, it is downloaded and parsed to extract its content.
 
 <kbd>
-  <img src="./docs/screenshot2.png" width="60%">
+  <img src="./docs/screenshot2.png" width="400">
 </kbd>
 
 
