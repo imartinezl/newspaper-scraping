@@ -12,12 +12,11 @@ Even though we usually read the national news through other mediums, we were mis
 Fortunately the articles are indexed through RSS every 30 minutes. The articles can be accessed, but the content is blocked by a pop-up, so I use a simple article scraper ([Newspaper3k](https://newspaper.readthedocs.io/en/latest/)) for extrating the title, subtitle, main image and text. Finally, a simple [Flask](http://flask.pocoo.org/) webpage was built to allocate the content and deployed on [Heroku](https://www.heroku.com/).
 
 The final webpage looks like this (very basic design, but functional):
+
 <kbd>
   <img src="./docs/screenshot1.png">
 </kbd>
-<kbd>
-  <img src="./docs/screenshot2.png">
-</kbd>
+
 
 ### Overview
 
@@ -45,7 +44,9 @@ After importing this data, I set up the Flask server with the following html tem
 
 When an article is requested, it is downloaded and parsed to extract its content.
 
-
+<kbd>
+  <img src="./docs/screenshot2.png">
+</kbd>
 
 
 
