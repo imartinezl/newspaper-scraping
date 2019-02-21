@@ -45,7 +45,7 @@ After importing this data, I set up the Flask server with the following html tem
 When an article is requested, it is downloaded and parsed to extract its content.
 
 <kbd>
-  <img src="./docs/screenshot2.png">
+  <img src="./docs/screenshot2.png" width="60%">
 </kbd>
 
 
