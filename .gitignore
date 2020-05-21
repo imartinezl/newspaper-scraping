@@ -1,6 +1,6 @@
 .DS_store
 .ipynb_checkpoints/*
 __pycache__/*
-venv/*
+.venv/*
 flask_session/*
 .Rhistory
