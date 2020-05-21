@@ -1,10 +1,8 @@
-{% extends "base.html" %}
-
-{% block content %}
-	<div id="entries-container">
-	    {% for entry in entries %}
-	    <div class="entry-container">
-	    	<a class="entry-link" href="{{ url_for('article', rss_id = rss_id, entry_index = entry.index) }}">
+{% extends "base.html" %} {% block content %}
+<div id="entries-container">
+    {% for entry in entries %}
+    <div class="entry-container">
+        <a class="entry-link" href="{{ url_for('article', rss_title = rss_title, entry_index = entry.index) }}">
 	    	{% if entry.imagen %}
 	    	<div class=entry-img-container>
 	    		<img class="entry-img" src={{ entry.imagen }} width="100" >
@@ -12,8 +10,8 @@
 	    	{% endif %}
 	    		<p class="entry-title">{{ entry.title }}</p>
 	    	</a>
-	    	<p class="entry-summary">{{ entry.summary }}</p>
-	    </div>
-	    {% endfor %}
-	</div>
+        <p class="entry-summary">{{ entry.summary }}</p>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

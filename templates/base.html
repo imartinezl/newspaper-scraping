@@ -1,32 +1,34 @@
 <html>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>DiarioVasco</title>
-      <link rel="shortcut icon" href="/static/favicon.png">
-      <link rel="icon" type="image/png" href="/static/favicon-192x192.png" sizes="192x192">
-      <link rel="apple-touch-icon" sizes="192x192" href="/static/favicon-192x192.png">
 
-      <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}"/> 
-      <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='mystyle.css')}}"/> 
-    </head>
-    <body>
-        <hr>
-        <div id=main_image_container>
-          <a href="{{ url_for('base') }}">
-            <img id=main_image src='../static/dv.png' > 
-          </a>
-        </div>
-        <hr>
-        <div id="sections-container">
-          {% for rss in rss_array %}
-            <a class="section-link" href="{{ url_for('section', rss_id = loop.index-1) }}">
-              <p class="section-text">{{rss.title}}</p>
-            </a>
-          {% endfor %}
-        </div>
-        <hr>
-        {% block content %}
-        <!-- <iframe frameborder='0' noresize='noresize' style='position: absolute; background: transparent; width: 100%; height:100%;' src="https://www.diariovasco.com/" frameborder="0"></iframe> -->
-        {% endblock %}
-    </body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DiarioVasco</title>
+    <link rel="shortcut icon" href="/static/favicon.png">
+    <link rel="icon" type="image/png" href="/static/favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/favicon-192x192.png">
+
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='mystyle.css')}}" />
+</head>
+
+<body>
+    <hr>
+    <div id=main_image_container>
+        <a href="{{ url_for('base') }}">
+            <img id=main_image src='../static/dv.png'>
+        </a>
+    </div>
+    <hr>
+    <div id="sections-container">
+        {% for rss in rss_array %}
+        <a class="section-link" href="{{ url_for('section', rss_title = rss.title) }}">
+            <p class="section-text">{{rss.title}}</p>
+        </a>
+        {% endfor %}
+    </div>
+    <hr> {% block content %}
+    <!-- <iframe frameborder='0' noresize='noresize' style='position: absolute; background: transparent; width: 100%; height:100%;' src="https://www.diariovasco.com/" frameborder="0"></iframe> -->
+    {% endblock %}
+</body>
+
 </html>
