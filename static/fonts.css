@@ -1,77 +1,24 @@
-@font-face{
-	font-family: SourceSerifPro-Bold;
-	src: url('fonts/Source_Serif_Pro/SourceSerifPro-Bold.ttf');
-}
-@font-face{
-	font-family: SourceSerifPro-Regular;
-	src: url('fonts/Source_Serif_Pro/SourceSerifPro-Regular.ttf');
-}
-@font-face{
-	font-family: SourceSerifPro-Semibold;
-	src: url('fonts/Source_Serif_Pro/SourceSerifPro-Semibold.ttf');
-}
-@font-face{
-	font-family: PT_Serif-Web-Bold;
-	src: url('fonts/PT_Serif/PT_Serif-Web-Bold.ttf');
-}
-@font-face{
-	font-family: PT_Serif-Web-BoldItalic;
-	src: url('fonts/PT_Serif/PT_Serif-Web-BoldItalic.ttf');
-}
-@font-face{
-	font-family: PT_Serif-Web-Italic;
-	src: url('fonts/PT_Serif/PT_Serif-Web-Italic.ttf');
-}
-@font-face{
-	font-family: PT_Serif-Web-Regular;
-	src: url('fonts/PT_Serif/PT_Serif-Web-Regular.ttf');
+@font-face {
+    font-family: SourceSerifPro-Regular;
+    src: url('fonts/Source_Serif_Pro/SourceSerifPro-Regular.ttf');
 }
 
-@font-face{
-	font-family: Roboto-Black;
-	src: url('fonts/Roboto/Roboto-Black.ttf');
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('fonts/Roboto/Roboto-Bold.ttf');
 }
-@font-face{
-	font-family: Roboto-BlackItalic;
-	src: url('fonts/Roboto/Roboto-BlackItalic.ttf');
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('fonts/Roboto/Roboto-Medium.ttf');
 }
-@font-face{
-	font-family: Roboto-Bold;
-	src: url('fonts/Roboto/Roboto-Bold.ttf');
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('fonts/Roboto/Roboto-Regular.ttf');
 }
-@font-face{
-	font-family: Roboto-BoldItalic;
-	src: url('fonts/Roboto/Roboto-BoldItalic.ttf');
-}
-@font-face{
-	font-family: Roboto-Italic;
-	src: url('fonts/Roboto/Roboto-Italic.ttf');
-}
-@font-face{
-	font-family: Roboto-Light;
-	src: url('fonts/Roboto/Roboto-Light.ttf');
-}
-@font-face{
-	font-family: Roboto-LightItalic;
-	src: url('fonts/Roboto/Roboto-LightItalic.ttf');
-}
-@font-face{
-	font-family: Roboto-Medium;
-	src: url('fonts/Roboto/Roboto-Medium.ttf');
-}
-@font-face{
-	font-family: Roboto-MediumItalic;
-	src: url('fonts/Roboto/Roboto-MediumItalic.ttf');
-}
-@font-face{
-	font-family: Roboto-Regular;
-	src: url('fonts/Roboto/Roboto-Regular.ttf');
-}
-@font-face{
-	font-family: Roboto-Thin;
-	src: url('fonts/Roboto/Roboto-Thin.ttf');
-}
-@font-face{
-	font-family: Roboto-ThinItalic;
-	src: url('fonts/Roboto/Roboto-ThinItalic.ttf');
+
+@font-face {
+    font-family: RobotoCondensed-Regular;
+    src: url('fonts/RobotoCondensed/RobotoCondensed-Regular.ttf');
 }
