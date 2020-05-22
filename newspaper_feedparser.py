@@ -8,7 +8,7 @@ from flask_session import Session
 from lxml.html import fromstring
 import requests
 import hashlib
-
+import datetime
 
 m = hashlib.md5()
 def str2md5(text):
@@ -32,6 +32,11 @@ def rssEntries(rss_url):
 		# Feature to cache downloaded articles
 		d.entries[i]['downloaded'] = False
 
+		# Date feature
+		if d.entries[i].published:
+			d.entries[i]['date'] = datetime.datetime.strptime(d.entries[i].published, '%a, %d %b %Y %H:%M:%S %z')
+			d.entries[i]['date_text'] = d.entries[i]['date'].strftime("%Y-%m-%d %H:%M")
+		
 		# Extract text and img from summary
 		summary = d.entries[i].summary
 		if len(summary) > 0:
@@ -95,7 +100,6 @@ def article(rss_title, entry_index):
 	if not entries[entry_id].downloaded:
 		web_page = requests.get(entries[entry_id].link)
 		article = newspaper.Article(entries[entry_id].link, verbose=True)
-		print(article)
 		print('***DOWNLOADING***', entries[entry_id].link)
 		try:
 			article.download()

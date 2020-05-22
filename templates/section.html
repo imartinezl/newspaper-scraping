@@ -8,9 +8,12 @@
 	    		<img class="entry-img" src={{ entry.imagen }} width="100" >
 	    	</div>
 	    	{% endif %}
-	    		<p class="entry-title">{{ entry.title }}</p>
-	    	</a>
+			<p class="entry-title">{{ entry.title }}</p>
+		</a>
         <p class="entry-summary">{{ entry.summary }}</p>
+        {% if entry.date_text %}
+        <p class="entry-date">{{entry.date_text}}</p>
+        {% endif %}
     </div>
     {% endfor %}
 </div>
