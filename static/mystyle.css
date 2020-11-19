@@ -109,13 +109,13 @@ hr {
 }
 
 .entry-img-container {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .entry-img {
-    width: 100%;
+    /* width: 100%; */
     border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    /* border-top-right-radius: 8px; */
     opacity: 0.95;
     filter: alpha(opacity=95);
     -moz-transition: ease all 0.3s;
@@ -140,6 +140,8 @@ hr {
     color: black;
     text-decoration: none;
     vertical-align: top;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .entry-link:hover {
