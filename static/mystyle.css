@@ -83,7 +83,8 @@ hr {
         display: grid;
         row-gap: 25px;
         column-gap: 25px;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         list-style: none;
         margin: 0px auto;
         text-align: center;
@@ -109,13 +110,14 @@ hr {
 }
 
 .entry-img-container {
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .entry-img {
-    /* width: 100%; */
+    /* width: minmax(250px, 1fr); */
+    width: 220px;
     border-top-left-radius: 8px;
-    /* border-top-right-radius: 8px; */
+    border-top-right-radius: 8px;
     opacity: 0.95;
     filter: alpha(opacity=95);
     -moz-transition: ease all 0.3s;
@@ -140,8 +142,8 @@ hr {
     color: black;
     text-decoration: none;
     vertical-align: top;
-    display: flex;
-    justify-content: flex-start;
+    /* display: flex;
+    justify-content: flex-start; */
 }
 
 .entry-link:hover {
@@ -151,10 +153,10 @@ hr {
 .entry-title {
     color: black;
     font-family: Roboto-Medium;
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     margin: 0px;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 0px;
     padding-left: 10px;
     padding-right: 10px;
@@ -163,7 +165,7 @@ hr {
 
 .entry-date {
     font-family: RobotoCondensed-Regular;
-    font-size: 10;
+    font-size: 10px;
     text-align: right;
     padding-left: 10px;
     padding-right: 10px;
@@ -172,7 +174,7 @@ hr {
 
 .entry-summary {
     font-family: SourceSerifPro-Regular;
-    font-size: 13;
+    font-size: 13px;
     text-align: left;
     color: #1d1d1d;
     padding-top: 10px;

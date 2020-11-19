@@ -2,16 +2,16 @@
 <div id="entries-container">
     {% for entry in entries %}
     <div class="entry-container">
+        {% if entry.date_text %} {% if entry.imagen %}
+        <div class=entry-img-container>
+            <img class="entry-img" src={{ entry.imagen }}>
+            <!-- width="135"> -->
+        </div>
+        {% endif %}
         <a class="entry-link" href="{{ url_for('article', rss_title = rss_title, entry_index = entry.index) }}">
-	    	{% if entry.imagen %}
-	    	<div class=entry-img-container>
-	    		<img class="entry-img" src={{ entry.imagen }} width="100" >
-	    	</div>
-	    	{% endif %}
-			<p class="entry-title">{{ entry.title }}</p>
-		</a>
-        <p class="entry-summary">{{ entry.summary }}</p>
-        {% if entry.date_text %}
+            <p class="entry-title">{{ entry.title }}</p>
+            <p class="entry-summary">{{ entry.summary }}</p>
+        </a>
         <p class="entry-date">{{entry.date_text}}</p>
         {% endif %}
     </div>
