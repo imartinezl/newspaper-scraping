@@ -18,7 +18,8 @@ def str2md5(text):
 
 def rssEntries(rss_url):
 	print(rss_url)
-	web_page = requests.get(rss_url)
+	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+	web_page = requests.get(rss_url, headers=headers)
 	d = feedparser.parse(web_page.content) # rss_url
 
 	for i in range(len(d.entries)):
