@@ -9,6 +9,7 @@ feedfinder2==0.0.4
 feedparser==5.2.1
 Flask==1.1.2
 Flask-Session==0.3.2
+gunicorn
 html2text==2020.1.16
 idna==2.9
 isort==4.3.21
