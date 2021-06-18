@@ -16,9 +16,10 @@ def str2md5(text):
 	num = str(int(m.hexdigest(), 16))
 	return num
 
+user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
 def rssEntries(rss_url):
 	print(rss_url)
-	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+	headers = {'User-Agent': user_agent}
 	web_page = requests.get(rss_url, headers=headers)
 	d = feedparser.parse(web_page.content) # rss_url
 
@@ -100,7 +101,7 @@ def article(rss_title, entry_index):
 
 	if not entries[entry_id].downloaded:
 		web_page = requests.get(entries[entry_id].link)
-		article = newspaper.Article(entries[entry_id].link, verbose=True)
+		article = newspaper.Article(entries[entry_id].link, verbose=True, browser_user_agent=user_agent)
 		print('***DOWNLOADING***', entries[entry_id].link)
 		try:
 			article.download()
