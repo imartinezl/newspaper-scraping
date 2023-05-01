@@ -7,7 +7,7 @@ click==7.1.2
 cssselect==1.1.0
 feedfinder2==0.0.4
 feedparser==5.2.1
-Flask==1.1.2
+Flask==2.3.2
 Flask-Session==0.3.2
 gunicorn==20.1.0
 html2text==2020.1.16
